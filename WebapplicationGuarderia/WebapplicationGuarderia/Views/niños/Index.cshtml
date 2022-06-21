@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebapplicationGuarderia.Models.niños>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Guarderia Nones</h2>
+<h3>Listado de Niños/as</h3>
+<p>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>
+        <td>
+            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Edit", "Edit", new { id = item.idniños }) |
+            @Html.ActionLink("Details", "Details", new { id = item.idniños }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idniños })
+        </td>
+    </tr>
+}
+
+</table>
